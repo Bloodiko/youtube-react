@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube React Watch POC",
+  "version": "0.1",
+  "description": "A little proof of concept, to play a reaction while watching the reacted video.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["reactInject.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["videoTiming.json"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ]
+}
